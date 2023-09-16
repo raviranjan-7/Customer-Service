@@ -9,33 +9,31 @@ import com.learning.model.CustomerResponse;
 @Component
 public class Convertor {
 
-	public Customer requesttoEntity(CustomerRequest customerRequest) {
-
+	public Customer requestToEntity(CustomerRequest customerRequest) {
 		Customer customerEntity = new Customer();
 		customerEntity.setName(customerRequest.getName());
-		customerEntity.setAdress(customerRequest.getAdress());
+		customerEntity.setAddress(customerRequest.getAddress());
 		customerEntity.setUserId(customerRequest.getUserId());
 		return customerEntity;
 
 	}
 
-	public CustomerResponse entitytoResponse(Customer customerEntity) {
+	public CustomerResponse entityToResponse(Customer customerEntity) {
 		CustomerResponse customerResponse = new CustomerResponse();
 		customerResponse.setCustomerId(customerEntity.getCustomerId());
 		customerResponse.setName(customerEntity.getName());
-		customerResponse.setAdress(customerEntity.getAdress());
+		customerResponse.setAddress(customerEntity.getAddress());
 		customerResponse.setUserId(customerEntity.getUserId());
 		return customerResponse;
 
 	}
-	
-	public Customer updateEntity(CustomerRequest customerRequest, Customer customerEntity ) {
-		
-		customerEntity.setAdress(customerRequest.getAdress());
+
+	public Customer updateEntity(CustomerRequest customerRequest, Customer customerEntity) {
+		customerEntity.setAddress(customerRequest.getAddress());
 		customerEntity.setUserId(customerRequest.getUserId());
 		customerEntity.setName(customerRequest.getName());
 		return customerEntity;
-		
+
 	}
 
 }

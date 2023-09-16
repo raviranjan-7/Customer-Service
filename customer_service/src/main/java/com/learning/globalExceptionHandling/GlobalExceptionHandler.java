@@ -12,8 +12,6 @@ public class GlobalExceptionHandler {
 	
 	@ExceptionHandler(CustomerResponseException.class)
 	public ResponseEntity<String>  handleCustomerResponseException(CustomerResponseException exception){
-		
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
 	}
-
 }

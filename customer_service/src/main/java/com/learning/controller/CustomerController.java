@@ -2,6 +2,7 @@ package com.learning.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -26,21 +27,18 @@ public class CustomerController {
 		return customerService.create(customerRequest);
 	}
 
-	@RequestMapping("/{id}")
+	@GetMapping("/{id}")
 	public CustomerResponse getCustomerById(@PathVariable Long id) {
 		return customerService.findCustomerById(id);
 	}
 
 	@PutMapping("/{id}")
-	public CustomerResponse updateCustomerById(@PathVariable Long id,
-			@RequestBody CustomerRequest customerRequest) {
-		return customerService.updateCustomer(id, customerRequest);
+	public CustomerResponse updateCustomerById(@PathVariable Long id, @RequestBody CustomerRequest customerRequest) {
+		return customerService.updateCustomerById(id, customerRequest);
 	}
 
 	@DeleteMapping("/{id}")
-	public Status deleteCustomerById(@PathVariable Long customerId) {
-		return customerService.deleteByCustomer(customerId);
-
+	public Status deleteById(@PathVariable Long id) {
+		return customerService.deleteById(id);
 	}
-
 }

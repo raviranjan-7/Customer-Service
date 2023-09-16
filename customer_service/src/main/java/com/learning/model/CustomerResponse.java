@@ -4,8 +4,9 @@ public class CustomerResponse {
 
 	private Long customerId;
 	private String name;
-	private String adress;
+	private String address;
 	private Long userId;
+	
 	public Long getCustomerId() {
 		return customerId;
 	}
@@ -18,11 +19,11 @@ public class CustomerResponse {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getAdress() {
-		return adress;
+	public String getAddress() {
+		return address;
 	}
-	public void setAdress(String adress) {
-		this.adress = adress;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	public Long getUserId() {
 		return userId;
